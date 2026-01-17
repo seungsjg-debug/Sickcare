@@ -9,7 +9,7 @@
         body { font-family: 'Pretendard', sans-serif; margin: 0; color: #333; line-height: 1.6; word-break: keep-all; }
         header { background: #fff; border-bottom: 1px solid #eee; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
         .logo { font-size: 1.5rem; font-weight: bold; color: #007bff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        nav a { margin-left: 15px; text-decoration: none; color: #555; font-weight: 500; font-size: 0.9rem; }
+        nav a { margin-left: 15px; text-decoration: none; color: #555; font-weight: 500; font-size: 0.95rem; }
 
         /* 메인 히어로 */
         .hero { 
@@ -26,30 +26,50 @@
         .btn-secondary { background: #fff; color: #007bff; border: 1px solid #fff; margin-top: 10px; }
 
         section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
-        h2 { font-size: 1.8rem; margin-bottom: 2.5rem; color: #007bff; }
+        h2 { font-size: 1.8rem; margin-bottom: 2.5rem; color: #007bff; position: relative; display: inline-block; }
         
+        /* 카드형 그리드 */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { padding: 2.5rem; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .card { padding: 2.5rem; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.02); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .card i { font-size: 3rem; color: #007bff; margin-bottom: 1.5rem; display: block; }
+        .card h3 { margin-bottom: 1rem; color: #222; }
 
-        .form-section { background: #f8f9fa; border-radius: 20px; margin-bottom: 4rem; }
+        /* 주소 강조 박스 */
+        .address-box {
+            background-color: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+        .address-item { margin-bottom: 10px; font-size: 1.1rem; }
+        .address-item strong { color: #007bff; margin-right: 10px; }
+
+        .form-section { background: #f0f8ff; border-radius: 20px; margin-bottom: 4rem; }
         form { max-width: 600px; margin: 0 auto; text-align: left; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 1.2rem; }
         label { font-weight: bold; display: block; margin-bottom: 0.5rem; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
-        .submit-btn { width: 100%; background: #007bff; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .submit-btn { width: 100%; background: #007bff; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
 
-        .map-container { width: 100%; border-radius: 15px; overflow: hidden; margin-top: 1rem; }
-        .kakao-float { position: fixed; bottom: 25px; right: 25px; width: 55px; height: 55px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
+        .map-container { width: 100%; border-radius: 15px; overflow: hidden; margin-top: 1rem; border: 1px solid #ddd; }
+        .kakao-float { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s; }
+        .kakao-float:hover { transform: scale(1.1); }
 
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 1rem; }
             nav { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-            nav a { margin: 0; font-size: 0.8rem; }
+            nav a { margin: 0; font-size: 0.9rem; }
             .hero { height: 350px; }
+            section { padding: 3rem 5%; }
         }
 
-        footer { background: #222; color: #bbb; padding: 3rem 5%; font-size: 0.85rem; text-align: left; }
+        footer { background: #222; color: #bbb; padding: 3rem 5%; font-size: 0.9rem; text-align: left; }
     </style>
 </head>
 <body>
@@ -76,14 +96,14 @@
     </section>
 
     <section id="about">
-        <h2>핵심 서비스</h2>
+        <h2>핵심 서비스 안내</h2>
         <div class="grid">
             <div class="card">
                 <i class="fa-solid fa-user-doctor"></i>
                 <h3>전문 간병 매칭</h3>
                 <p>신원 검증과 직무 교육을 마친 베테랑 간병인이 병원 및 가정으로 찾아갑니다.</p>
             </div>
-            <div id="escort" class="card" style="border: 2px solid #007bff;">
+            <div id="escort" class="card">
                 <i class="fa-solid fa-car-side"></i>
                 <h3>병원동행 매니저</h3>
                 <p>보호자 대신 병원 이동, 접수, 진료 동행, 처방전 수령 및 귀가를 안전하게 도와드립니다.</p>
@@ -97,7 +117,7 @@
     </section>
 
     <section id="apply" class="form-section">
-        <h2>상담 신청 양식</h2>
+        <h2>통합 상담 신청</h2>
         <form>
             <div class="form-group">
                 <label>문의자 성함</label>
@@ -108,7 +128,7 @@
                 <input type="tel" placeholder="010-0000-0000">
             </div>
             <div class="form-group">
-                <label>필요한 서비스</label>
+                <label>필요한 서비스 선택</label>
                 <select>
                     <option>전문 간병인 매칭</option>
                     <option>병원동행 매니저 예약</option>
@@ -117,7 +137,7 @@
             </div>
             <div class="form-group">
                 <label>상세 요청사항</label>
-                <textarea rows="4" placeholder="진료 일시, 병원 이름 또는 환자분의 상태를 적어주세요"></textarea>
+                <textarea rows="4" placeholder="진료 일정, 병원명, 또는 환자분의 상태를 적어주세요"></textarea>
             </div>
             <button type="button" class="submit-btn" onclick="alert('신청되었습니다! 케어라이트 매니저가 곧 연락드리겠습니다.')">상담 예약하기</button>
         </form>
@@ -125,22 +145,34 @@
 
     <section id="location">
         <h2>오시는 길</h2>
-        <p>서울특별시 강남구 테헤란로 123 (본사)</p>
+        
+        <div class="address-box">
+            <div class="address-item">
+                <strong>본사</strong> 서울특별시 강남구 테헤란로 123, 5층
+            </div>
+            <div class="address-item">
+                <strong>가평 지점</strong> 경기도 가평군 OO면 (별장 사무소)
+            </div>
+            <div class="address-item" style="color: #666; font-size: 0.9rem; margin-top: 10px;">
+                * 방문 전 미리 전화 예약 부탁드립니다.
+            </div>
+        </div>
+
         <div class="map-container">
-            <iframe src="http://googleusercontent.com/maps.google.com/5" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="http://googleusercontent.com/maps.google.com/6" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer>
         <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
             <div>
-                <h3>케어라이트(Care Light)</h3>
-                <p>대표번호: 02-1234-5678</p>
-                <p>가평 상담소: 경기도 가평군 (별장 사무소)</p>
+                <h3 style="color: #fff; margin-bottom: 10px;">케어라이트(Care Light)</h3>
+                <p>대표번호: 02-1234-5678 | 팩스: 02-1234-5679</p>
+                <p>이메일: help@carelight.com</p>
             </div>
-            <div style="text-align: right;">
+            <div style="text-align: right; min-width: 200px;">
                 <p>© 2026 Care Light. All rights reserved.</p>
-                <p>가족이 못 갈 때, 대신 가는 든든한 동반자</p>
+                <p>가족의 마음으로 동행합니다.</p>
             </div>
         </div>
     </footer>
