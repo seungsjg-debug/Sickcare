@@ -11,7 +11,7 @@
         .logo { font-size: 1.5rem; font-weight: bold; color: #0056b3; text-decoration: none; }
         nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; }
 
-        /* 메인 히어로 - 따뜻한 간호/돌봄 이미지 (Unsplash 무료 이미지) */
+        /* 메인 히어로 */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
             url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80'); 
@@ -26,21 +26,18 @@
         .btn-secondary { background: #fff; color: #0056b3; border: 1px solid #fff; margin-top: 10px; }
 
         section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; background: #fff; }
+        h2 { font-size: 1.8rem; margin-bottom: 2.5rem; color: #0056b3; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { padding: 2.5rem; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
 
-        /* 중간 이미지 섹션 - 신뢰감을 주는 이미지 */
-        .info-img { 
-            width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem; 
-        }
-
-        .form-section { background: #f8f9fa; }
+        .form-section { background: #f8f9fa; border-radius: 20px; margin-bottom: 4rem; }
         form { max-width: 600px; margin: 0 auto; text-align: left; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 1.2rem; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
         .submit-btn { width: 100%; background: #0056b3; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
-        .map-container { width: 100%; border-radius: 15px; overflow: hidden; margin-top: 1rem; }
+        .map-container { width: 100%; border-radius: 15px; overflow: hidden; margin-top: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .kakao-float { position: fixed; bottom: 25px; right: 25px; width: 55px; height: 55px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
 
         @media (max-width: 768px) {
@@ -48,6 +45,7 @@
             nav { margin-top: 15px; }
             nav a { margin: 0 10px; }
             .hero { height: 350px; }
+            section { padding: 3rem 1rem; }
         }
 
         footer { background: #222; color: #bbb; padding: 3rem 5%; font-size: 0.85rem; text-align: left; }
@@ -76,19 +74,22 @@
     </section>
 
     <section id="about">
-        <h2>믿을 수 있는 이유</h2>
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dad99901?auto=format&fit=crop&w=1000&q=80" alt="의료진 상담" class="info-img">
-        
+        <h2>전케어를 믿을 수 있는 이유</h2>
         <div class="grid">
             <div class="card">
-                <i class="fa-solid fa-shield-heart" style="font-size: 2.5rem; color: #0056b3; margin-bottom: 1rem;"></i>
-                <h3>정직한 매칭</h3>
-                <p>불필요한 수수료 없이 투명하게 운영됩니다.</p>
+                <i class="fa-solid fa-shield-heart" style="font-size: 3rem; color: #0056b3; margin-bottom: 1.5rem;"></i>
+                <h3>정직한 매칭 시스템</h3>
+                <p>불필요한 수수료를 줄이고 투명한 비용 산정으로 보호자의 부담을 덜어드립니다.</p>
             </div>
             <div class="card">
-                <i class="fa-solid fa-hospital-user" style="font-size: 2.5rem; color: #0056b3; margin-bottom: 1rem;"></i>
+                <i class="fa-solid fa-hospital-user" style="font-size: 3rem; color: #0056b3; margin-bottom: 1.5rem;"></i>
                 <h3>전문 교육 이수</h3>
-                <p>모든 간병인은 정기적인 직무 및 인성 교육을 받습니다.</p>
+                <p>모든 간병인은 엄격한 신원 확인과 정기적인 직무 교육을 마친 전문가입니다.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-hand-holding-medical" style="font-size: 3rem; color: #0056b3; margin-bottom: 1.5rem;"></i>
+                <h3>맞춤형 케어</h3>
+                <p>환자의 상태와 요구 사항에 가장 적합한 최적의 간병인을 연결해 드립니다.</p>
             </div>
         </div>
     </section>
@@ -108,7 +109,7 @@
                 <label>상세 내용</label>
                 <textarea rows="4" placeholder="환자 정보 또는 간병인 지원 동기를 적어주세요"></textarea>
             </div>
-            <button type="button" class="submit-btn" onclick="alert('신청되었습니다!')">전송하기</button>
+            <button type="button" class="submit-btn" onclick="alert('신청되었습니다! 전케어에서 곧 연락드리겠습니다.')">전송하기</button>
         </form>
     </section>
 
@@ -116,7 +117,7 @@
         <h2>오시는 길</h2>
         <p>서울 사무소 및 가평 상담소 위치 확인</p>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.25390779774!2d127.509748!3d37.501174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMwJzA0LjIiTiAxMjfCsDMwJzM1LjEiRQ!5e0!3m2!1sko!2skr!4v1640000000000!5m2!1sko!2skr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.792476722379!2d127.5111!3d37.5555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMzJzE5LjgiTiAxMjfCsDMwJzM5LjkiRQ!5e0!3m2!1sko!2skr!4v1642345678901!5m2!1sko!2skr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -125,9 +126,9 @@
             <div>
                 <h3>전케어 인력사무소</h3>
                 <p>본사: 서울특별시 강남구 테헤란로 123</p>
-                <p>가평: 경기도 가평군 (별장 사무소)</p>
+                <p>가평 지점: 경기도 가평군 (진입로 넓음, 주차 가능)</p>
             </div>
-            <div>
+            <div style="text-align: right;">
                 <p>© 2026 Jeon Care. All rights reserved.</p>
                 <p>문의: 02-1234-5678</p>
             </div>
