@@ -6,66 +6,56 @@
     <title>전케어(Jeon Care) - 신뢰받는 간병인 매칭</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 1. 기본 스타일 (공통) */
         body { font-family: 'Pretendard', sans-serif; margin: 0; color: #333; line-height: 1.6; word-break: keep-all; }
         header { background: #fff; border-bottom: 1px solid #eee; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
         .logo { font-size: 1.5rem; font-weight: bold; color: #0056b3; text-decoration: none; }
-        nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; font-size: 0.95rem; }
+        nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; }
 
-        /* 2. 히어로 섹션 (반응형) */
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1576765608596-b2012b6cc0e2?auto=format&fit=crop&w=1200&q=80'); 
-                background-size: cover; background-position: center; height: 450px; display: flex; flex-direction: column; 
-                justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 1rem; }
-        .hero p { font-size: clamp(1rem, 3vw, 1.2rem); margin-bottom: 2rem; }
+        /* 메인 히어로 - 따뜻한 간호/돌봄 이미지 (Unsplash 무료 이미지) */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80'); 
+            background-size: cover; background-position: center; height: 450px; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            color: white; text-align: center; padding: 0 20px; 
+        }
         
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 1rem; }
         .btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
         .btn-primary { background: #0056b3; color: white; border: 1px solid #0056b3; }
-        .btn-secondary { background: #fff; color: #0056b3; border: 1px solid #fff; }
+        .btn-secondary { background: #fff; color: #0056b3; border: 1px solid #fff; margin-top: 10px; }
 
-        /* 3. 섹션 레이아웃 */
         section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
-        h2 { font-size: 1.8rem; margin-bottom: 2.5rem; color: #0056b3; position: relative; padding-bottom: 10px; }
-        h2::after { content: ''; width: 50px; height: 3px; background: #0056b3; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; background: #fff; }
 
-        /* 4. 카드형 그리드 (모바일 대응) */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; transition: 0.3s; background: #fff; }
+        /* 중간 이미지 섹션 - 신뢰감을 주는 이미지 */
+        .info-img { 
+            width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem; 
+        }
 
-        /* 5. 상담 신청 폼 (모바일 대응) */
-        .form-section { background: #f8f9fa; max-width: 100%; }
+        .form-section { background: #f8f9fa; }
         form { max-width: 600px; margin: 0 auto; text-align: left; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 1.2rem; }
-        label { font-weight: bold; display: block; margin-bottom: 0.5rem; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
-        .submit-btn { width: 100%; background: #0056b3; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        .submit-btn { width: 100%; background: #0056b3; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
-        /* 6. 지도 및 카톡 버튼 */
         .map-container { width: 100%; border-radius: 15px; overflow: hidden; margin-top: 1rem; }
         .kakao-float { position: fixed; bottom: 25px; right: 25px; width: 55px; height: 55px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
 
-        /* 7. 모바일 전용 스타일 (미디어 쿼리) */
         @media (max-width: 768px) {
-            header { padding: 1rem; flex-direction: column; }
-            .logo { margin-bottom: 10px; }
-            nav a { margin: 0 10px; font-size: 0.85rem; }
+            header { flex-direction: column; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
             .hero { height: 350px; }
-            .cta-buttons { display: flex; flex-direction: column; width: 100%; gap: 10px; }
-            .btn { width: 90%; }
-            section { padding: 3rem 20px; }
-            form { padding: 1.5rem; }
-            .footer-content { flex-direction: column; gap: 2rem; }
         }
 
-        /* 8. 푸터 */
-        footer { background: #222; color: #bbb; padding: 3rem 5%; font-size: 0.85rem; }
-        .footer-content { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
-        .footer-info h3 { color: #fff; margin-bottom: 1rem; }
+        footer { background: #222; color: #bbb; padding: 3rem 5%; font-size: 0.85rem; text-align: left; }
     </style>
 </head>
 <body>
 
-    <a href="https://pf.kakao.com/_xxxx" class="kakao-float" target="_blank"><i class="fa-solid fa-comment"></i></a>
+    <a href="https://pf.kakao.com/" class="kakao-float" target="_blank"><i class="fa-solid fa-comment"></i></a>
 
     <header>
         <a href="#" class="logo">전케어(Jeon Care)</a>
@@ -77,8 +67,8 @@
     </header>
 
     <section class="hero">
-        <h1>환자와 가족 모두의 평화</h1>
-        <p>엄선된 전문 간병인을 신속하게 연결해 드립니다.</p>
+        <h1>가장 힘든 순간, 전케어가 함께합니다</h1>
+        <p>검증된 전문 인력의 맞춤형 간병 서비스를 경험하세요.</p>
         <div class="cta-buttons">
             <a href="#apply" class="btn btn-primary">빠른 상담 신청</a>
             <a href="tel:02-1234-5678" class="btn btn-secondary">전화 바로 연결</a>
@@ -86,23 +76,25 @@
     </section>
 
     <section id="about">
-        <h2>전케어 서비스 안내</h2>
+        <h2>믿을 수 있는 이유</h2>
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dad99901?auto=format&fit=crop&w=1000&q=80" alt="의료진 상담" class="info-img">
+        
         <div class="grid">
             <div class="card">
-                <i class="fa-solid fa-user-shield" style="font-size: 2.5rem; color: #0056b3; margin-bottom: 1rem;"></i>
-                <h3>철저한 신원 검증</h3>
-                <p>경력 증명과 면접을 통과한 믿을 수 있는 인력만 매칭합니다.</p>
+                <i class="fa-solid fa-shield-heart" style="font-size: 2.5rem; color: #0056b3; margin-bottom: 1rem;"></i>
+                <h3>정직한 매칭</h3>
+                <p>불필요한 수수료 없이 투명하게 운영됩니다.</p>
             </div>
             <div class="card">
-                <i class="fa-solid fa-clock-rotate-left" style="font-size: 2.5rem; color: #0056b3; margin-bottom: 1rem;"></i>
-                <h3>365일 실시간 대응</h3>
-                <p>병원, 요양소 어디든 필요하신 곳에 신속히 배치합니다.</p>
+                <i class="fa-solid fa-hospital-user" style="font-size: 2.5rem; color: #0056b3; margin-bottom: 1rem;"></i>
+                <h3>전문 교육 이수</h3>
+                <p>모든 간병인은 정기적인 직무 및 인성 교육을 받습니다.</p>
             </div>
         </div>
     </section>
 
     <section id="apply" class="form-section">
-        <h2>간병 상담 신청</h2>
+        <h2>간병 상담 및 구직 문의</h2>
         <form>
             <div class="form-group">
                 <label>문의자 성함</label>
@@ -113,39 +105,31 @@
                 <input type="tel" placeholder="010-0000-0000">
             </div>
             <div class="form-group">
-                <label>상담 내용</label>
-                <select>
-                    <option>간병인이 필요합니다</option>
-                    <option>간병인 일자리를 찾습니다</option>
-                    <option>기타 문의</option>
-                </select>
+                <label>상세 내용</label>
+                <textarea rows="4" placeholder="환자 정보 또는 간병인 지원 동기를 적어주세요"></textarea>
             </div>
-            <div class="form-group">
-                <label>상세 요청사항</label>
-                <textarea rows="3" placeholder="환자 상태나 희망 근무 조건을 적어주세요"></textarea>
-            </div>
-            <button type="button" class="submit-btn" onclick="alert('신청이 완료되었습니다. 확인 후 곧 연락드리겠습니다.')">신청 완료</button>
+            <button type="button" class="submit-btn" onclick="alert('신청되었습니다!')">전송하기</button>
         </form>
     </section>
 
     <section id="location">
         <h2>오시는 길</h2>
-        <p>본사: 서울시 강남구 테헤란로 123</p>
+        <p>서울 사무소 및 가평 상담소 위치 확인</p>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.1118123281145!2d127.0396001!3d37.5002461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca40f368f5475%3A0x89798e4d8258380!2z7Zq964yA7Jet!5e0!3m2!1sko!2skr!4v1705481234567!5m2!1sko!2skr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.25390779774!2d127.509748!3d37.501174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMwJzA0LjIiTiAxMjfCsDMwJzM1LjEiRQ!5e0!3m2!1sko!2skr!4v1640000000000!5m2!1sko!2skr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-info">
+            <div>
                 <h3>전케어 인력사무소</h3>
-                <p>주소: 서울시 강남구 테헤란로 123</p>
-                <p>대표번호: 02-1234-5678</p>
+                <p>본사: 서울특별시 강남구 테헤란로 123</p>
+                <p>가평: 경기도 가평군 (별장 사무소)</p>
             </div>
-            <div class="footer-info">
+            <div>
                 <p>© 2026 Jeon Care. All rights reserved.</p>
-                <p>가평 별장: 경기도 가평군 OO면 (대형차량 진입 가능)</p>
+                <p>문의: 02-1234-5678</p>
             </div>
         </div>
     </footer>
