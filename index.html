@@ -13,51 +13,44 @@
         /* 헤더 스타일 */
         header { background: #fff; border-bottom: 1px solid #eee; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .logo { font-size: 1.5rem; font-weight: bold; color: #007bff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        
-        /* 메뉴 스타일 */
         nav { display: flex; gap: 20px; flex-wrap: wrap; }
         nav a { text-decoration: none; color: #555; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
         nav a:hover { color: #007bff; }
 
         /* 메인 히어로 */
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-            url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80'); 
-            background-size: cover; background-position: center; height: 450px; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; 
-            color: white; text-align: center; padding: 0 20px; 
-        }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
         .hero h1 { font-size: clamp(1.6rem, 5vw, 2.6rem); margin-bottom: 1rem; }
         .btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
         .btn-primary { background: #007bff; color: white; border: 1px solid #007bff; }
         .btn-secondary { background: #fff; color: #007bff; border: 1px solid #fff; margin-top: 10px; }
 
         section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
-        h2 { font-size: 1.8rem; margin-bottom: 2.5rem; color: #007bff; position: relative; display: inline-block; }
-
-        /* 카드형 그리드 */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .card { padding: 2.5rem; border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.02); transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid #007bff; }
         .card i { font-size: 3rem; color: #007bff; margin-bottom: 1.5rem; display: block; }
         .card h3 { margin-bottom: 1rem; color: #222; }
 
-        /* 주소 박스 */
+        /* 주소 및 폼 스타일 */
         .address-box { background-color: #f8f9fa; border: 2px solid #e9ecef; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; display: inline-block; width: 100%; max-width: 600px; box-sizing: border-box; }
         .address-item { margin-bottom: 10px; font-size: 1.1rem; }
         .address-item strong { color: #007bff; margin-right: 10px; }
 
-        /* 신청 양식 */
         .form-section { background: #f0f8ff; border-radius: 20px; margin-bottom: 4rem; }
         form { max-width: 600px; margin: 0 auto; text-align: left; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 1.2rem; }
         label { font-weight: bold; display: block; margin-bottom: 0.5rem; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 1rem; }
-        .submit-btn { width: 100%; background: #007bff; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
+        .submit-btn { width: 100%; background: #007bff; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem; transition: background 0.3s; }
+        .submit-btn:hover { background: #0056b3; }
 
-        /* 지도 컨테이너 */
+        /* 성공 메시지 스타일 (평소엔 숨김) */
+        #form-status { display: none; max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        #form-status i { font-size: 4rem; color: #28a745; margin-bottom: 1rem; }
+        #form-status h3 { margin: 0; color: #333; font-size: 1.5rem; }
+        #form-status p { color: #666; margin-top: 10px; }
+
         .map-container { width: 100%; border-radius: 15px; overflow: hidden; margin-top: 1rem; border: 1px solid #ddd; height: 400px; }
-        
         .kakao-float { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s; }
         .kakao-float:hover { transform: scale(1.1); }
 
@@ -97,29 +90,16 @@
     <section id="about">
         <h2>핵심 서비스 안내</h2>
         <div class="grid">
-            <div id="matching" class="card">
-                <i class="fa-solid fa-user-doctor"></i>
-                <h3>전문 간병 매칭</h3>
-                <p>신원 검증과 직무 교육을 마친 베테랑 간병인이 병원 및 가정으로 찾아갑니다.</p>
-            </div>
-            
-            <div id="escort" class="card">
-                <i class="fa-solid fa-car-side"></i>
-                <h3>병원동행 매니저</h3>
-                <p>보호자 대신 병원 이동, 접수, 진료 동행, 처방전 수령 및 귀가를 안전하게 도와드립니다.</p>
-            </div>
-            
-            <div id="recruit" class="card">
-                <i class="fa-solid fa-user-nurse"></i>
-                <h3>간병인 상시 모집</h3>
-                <p>요양보호사 자격증 소지자 및 경력자를 환영합니다. 업계 최고의 대우를 약속드립니다.</p>
-            </div>
+            <div id="matching" class="card"><i class="fa-solid fa-user-doctor"></i><h3>전문 간병 매칭</h3><p>신원 검증을 마친 베테랑 간병인이 병원 및 가정으로 찾아갑니다.</p></div>
+            <div id="escort" class="card"><i class="fa-solid fa-car-side"></i><h3>병원동행 매니저</h3><p>보호자 대신 진료 동행, 접수, 수납 및 귀가를 안전하게 도와드립니다.</p></div>
+            <div id="recruit" class="card"><i class="fa-solid fa-user-nurse"></i><h3>간병인 상시 모집</h3><p>요양보호사 자격증 소지자를 환영합니다. 업계 최고의 대우를 약속드립니다.</p></div>
         </div>
     </section>
 
     <section id="apply" class="form-section">
         <h2>통합 상담 신청</h2>
-        <form action="https://formspree.io/f/xpqqqbjr" method="POST">
+        
+        <form id="my-form" action="https://formspree.io/f/xpqqqbjr" method="POST">
             <div class="form-group">
                 <label>문의자 성함</label>
                 <input type="text" name="name" required placeholder="성함을 입력하세요">
@@ -140,32 +120,24 @@
                 <label>상세 요청사항</label>
                 <textarea name="message" rows="4" placeholder="진료 일정, 병원명, 또는 간병 경력 등을 적어주세요"></textarea>
             </div>
-            <input type="text" name="_gotcha" style="display:none">
-            
-            <button type="submit" class="submit-btn">상담 예약하기 (전송)</button>
+            <button type="submit" id="my-form-button" class="submit-btn">상담 예약하기 (전송)</button>
         </form>
+
+        <div id="form-status">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>신청이 완료되었습니다!</h3>
+            <p>케어라이트 담당자가 확인 후<br>빠른 시간 내에 연락드리겠습니다.</p>
+        </div>
     </section>
 
     <section id="location">
         <h2>오시는 길</h2>
-        
         <div class="address-box">
-            <div class="address-item">
-                <strong>본사</strong> 서울특별시 강남구 테헤란로 123
-            </div>
-            <div class="address-item">
-                <strong>가평 지점</strong> 경기도 가평군 (별장 사무소)
-            </div>
-            <div class="address-item" style="color: #666; font-size: 0.9rem; margin-top: 10px;">
-                * 방문 전 미리 전화 예약 부탁드립니다.
-            </div>
+            <div class="address-item"><strong>본사</strong> 서울특별시 강남구 테헤란로 123</div>
+            <div class="address-item"><strong>가평 지점</strong> 경기도 가평군 (별장 사무소)</div>
         </div>
-
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.152349887754!2d127.0275573!3d37.4994514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1598c36295b%3A0x6a0499696013349!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDshJw!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3165.1102588147!2d127.037418!3d37.500242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3f703901b59%3A0x6b772c114f056d6!2z7Jet7IK87Jet!5e0!3m2!1sko!2skr!4v1705400000000!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -181,6 +153,52 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        var form = document.getElementById("my-form");
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("form-status");
+            var button = document.getElementById("my-form-button");
+            var data = new FormData(event.target);
+            
+            // 버튼을 '전송 중...'으로 변경
+            button.disabled = true;
+            button.innerText = "전송 중입니다...";
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // 성공 시: 폼 숨기고 완료 메시지 보여주기
+                    form.style.display = "none";
+                    status.style.display = "block";
+                    form.reset();
+                } else {
+                    // 에러 시
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert("오류가 발생했습니다: " + data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("문제가 발생했습니다. 잠시 후 다시 시도해주세요.");
+                        }
+                    });
+                    button.disabled = false;
+                    button.innerText = "상담 예약하기 (전송)";
+                }
+            }).catch(error => {
+                alert("전송에 실패했습니다. 인터넷 연결을 확인해주세요.");
+                button.disabled = false;
+                button.innerText = "상담 예약하기 (전송)";
+            });
+        }
+        form.addEventListener("submit", handleSubmit);
+    </script>
 
 </body>
 </html>
