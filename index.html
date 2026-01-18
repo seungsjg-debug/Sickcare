@@ -8,7 +8,7 @@
     <style>
         /* 기본 설정 */
         html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-        body { font-family: 'Pretendard', sans-serif; margin: 0; color: #333; line-height: 1.7; word-break: keep-all; }
+        body { font-family: 'Pretendard', sans-serif; margin: 0; color: #333; line-height: 1.6; word-break: keep-all; }
         
         /* 헤더 */
         header { background: #fff; border-bottom: 1px solid #eee; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
@@ -19,67 +19,67 @@
 
         /* 히어로 섹션 */
         .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1576765611791-374636eedaa5?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; max-width: 700px; }
-        .btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin: 5px; }
+        .hero h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: 1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); line-height: 1.3; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; max-width: 700px; }
+        .btn { padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; margin: 3px; font-size: 0.95rem; }
         .btn-primary { background: #007bff; color: white; border: 1px solid #007bff; }
         .btn-primary:hover { background: #0056b3; }
         .btn-secondary { background: white; color: #007bff; border: 1px solid white; }
-        .btn-outline { border: 2px solid #007bff; color: #007bff; background: transparent; border-radius: 8px; padding: 10px 20px; font-size: 0.9rem; }
-        .btn-outline:hover { background: #007bff; color: white; }
+        
+        /* 전화번호 배지 스타일 */
+        .contact-phones { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px; }
+        .phone-badge { background: rgba(255,255,255,0.9); color: #007bff; padding: 8px 15px; border-radius: 30px; font-weight: bold; text-decoration: none; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .phone-badge:hover { background: #fff; transform: translateY(-2px); }
 
         /* 공통 섹션 스타일 */
-        section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
-        h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #007bff; text-align: center; }
-        .section-desc { text-align: center; margin-bottom: 3rem; color: #666; font-size: 1.1rem; }
+        section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #007bff; text-align: center; }
+        .section-desc { text-align: center; margin-bottom: 2.5rem; color: #666; font-size: 1rem; }
         
-        /* 소개 섹션 */
-        .about-box { background: #f9f9f9; padding: 3rem; border-radius: 15px; border-left: 5px solid #007bff; }
-        .about-box h3 { margin-top: 0; color: #333; }
+        /* 박스 스타일 */
+        .about-box { background: #f9f9f9; padding: 2rem; border-radius: 15px; border-left: 5px solid #007bff; }
+        .about-box h3 { margin-top: 0; color: #333; font-size: 1.3rem; }
 
-        /* 요금표 테이블 스타일 */
+        /* 요금표 */
         .price-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .price-table th { background: #007bff; color: white; padding: 15px; text-align: left; }
-        .price-table td { padding: 15px; border-bottom: 1px solid #eee; color: #444; }
-        .price-table tr:last-child td { border-bottom: none; }
-        .price-note { font-size: 0.9rem; color: #666; margin-top: 10px; background: #fff8e1; padding: 15px; border-radius: 8px; }
-        .price-note strong { color: #d32f2f; }
+        .price-table th { background: #007bff; color: white; padding: 12px; text-align: left; font-size: 0.95rem; }
+        .price-table td { padding: 12px; border-bottom: 1px solid #eee; color: #444; font-size: 0.9rem; }
+        .price-note { font-size: 0.85rem; color: #666; margin-top: 10px; background: #fff8e1; padding: 15px; border-radius: 8px; }
 
-        /* 재가요양 & 병원동행 카드 */
-        .service-card { display: flex; flex-direction: column; md:flex-row; gap: 2rem; background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; margin-bottom: 2rem; }
+        /* 서비스 카드 */
+        .service-card { display: flex; flex-direction: column; md:flex-row; gap: 1.5rem; background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; margin-bottom: 2rem; }
         .service-info { flex: 2; }
         .service-price { flex: 1; background: #f8f9fa; padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid #e9ecef; }
-        .service-price h4 { color: #007bff; margin-top: 0; }
-        .price-tag { font-size: 1.5rem; font-weight: bold; color: #333; margin: 10px 0; }
+        .price-tag { font-size: 1.3rem; font-weight: bold; color: #333; margin: 8px 0; }
         
         /* 폼 스타일 */
         .form-section { background: #f0f8ff; border-radius: 20px; }
-        form { max-width: 600px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 1.2rem; }
-        label { font-weight: bold; display: block; margin-bottom: 0.5rem; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 1rem; }
-        .submit-btn { width: 100%; background: #007bff; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem; transition: background 0.3s; }
-        .submit-btn:hover { background: #0056b3; }
+        form { max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 1rem; }
+        label { font-weight: bold; display: block; margin-bottom: 0.4rem; font-size: 0.9rem; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 0.95rem; }
+        .submit-btn { width: 100%; background: #007bff; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; }
         
         /* 성공 메시지 */
         #form-status { display: none; text-align: center; padding: 3rem; background: white; border-radius: 15px; }
-        #form-status i { font-size: 4rem; color: #28a745; margin-bottom: 1rem; }
+        #form-status i { font-size: 3.5rem; color: #28a745; margin-bottom: 1rem; }
 
         /* 지도 및 하단 */
-        .map-container { width: 100%; height: 400px; border-radius: 15px; overflow: hidden; border: 1px solid #ddd; margin-top: 2rem; }
-        .contact-phones { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 20px; }
-        .phone-badge { background: #fff; color: #007bff; padding: 10px 20px; border-radius: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border: 1px solid #007bff; }
-        
-        .kakao-float { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s; }
-        .kakao-float:hover { transform: scale(1.1); }
-        footer { background: #222; color: #bbb; padding: 3rem 5%; font-size: 0.9rem; }
+        .map-container { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; border: 1px solid #ddd; margin-top: 2rem; }
+        .kakao-float { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
+        footer { background: #222; color: #bbb; padding: 2rem 5%; font-size: 0.85rem; }
 
-        @media (max-width: 900px) {
-            header { flex-direction: column; padding: 1rem; }
-            nav { margin-top: 15px; justify-content: center; gap: 10px; }
-            nav a { margin: 0 5px; font-size: 0.85rem; }
-            .hero { height: 400px; }
-            .service-card { flex-direction: column; }
+        /* 모바일 최적화 (글자 크기 조정) */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 0.8rem; }
+            nav { margin-top: 10px; justify-content: center; gap: 10px; }
+            nav a { margin: 0 3px; font-size: 0.8rem; }
+            .hero { height: auto; padding: 4rem 1rem; }
+            .hero h1 { font-size: 1.6rem; }
+            section { padding: 3rem 1rem; }
+            .service-card { flex-direction: column; padding: 1.5rem; }
+            h2 { font-size: 1.5rem; }
+            .price-table th, .price-table td { padding: 10px 5px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -94,18 +94,22 @@
             <a href="#homecare">재가요양</a>
             <a href="#rates">간병비용</a>
             <a href="#escort">병원동행</a>
+            <a href="#matching">간병매칭</a>
             <a href="#recruit">인재채용</a>
             <a href="#contact">상담문의</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>전문적인 돌봄의 시작, 케어라이트</h1>
+        <h1>전문적인 돌봄의 시작,<br>주식회사 케이라이트</h1>
         <p>병원 및 가정에 계신 환자분께 차별화된 간병 서비스와<br>따뜻한 방문요양 서비스를 제공합니다.</p>
+        
         <div class="contact-phones">
             <a href="tel:010-2730-5479" class="phone-badge"><i class="fa-solid fa-phone"></i> 010-2730-5479</a>
             <a href="tel:010-7654-6586" class="phone-badge"><i class="fa-solid fa-phone"></i> 010-7654-6586</a>
+            <a href="tel:010-8999-6565" class="phone-badge"><i class="fa-solid fa-phone"></i> 010-8999-6565</a>
         </div>
+        
         <div>
             <a href="#contact" class="btn btn-primary">간병/요양 상담신청</a>
             <a href="#recruit" class="btn btn-secondary">간병인 구직</a>
@@ -117,7 +121,7 @@
         <div class="about-box">
             <h3>"다양하고 디테일한 돌봄의 실천"</h3>
             <p>케어라이트(주식회사 케이라이트)는 병원 및 가정에 계신 환자분께 차별화된 간병서비스를 제공하는 전문적인 돌봄서비스 기업입니다.</p>
-            <p>어르신들께 따뜻한 마음으로 다가가고자 방문요양을 시작하였으며, 어르신들을 위한 맞춤형 돌봄 서비스와 차별화된 재가 서비스로 <strong>'가장 편안한 돌봄'</strong>을 약속드립니다.</p>
+            <p>어르신들을 위한 맞춤형 돌봄 서비스와 차별화된 재가 서비스로 <strong>'가장 편안한 돌봄'</strong>을 약속드립니다.</p>
         </div>
     </section>
 
@@ -125,17 +129,17 @@
         <h2>재가방문요양 서비스</h2>
         <div class="service-card">
             <div class="service-info">
-                <h3 style="color:#007bff;"><i class="fa-solid fa-house-chimney-medical"></i> 어르신을 위한 맞춤형 돌봄</h3>
-                <p>거동이 불편하신 어르신 댁으로 국가 공인 요양보호사가 직접 방문하여 신체 활동 및 일상생활을 지원합니다.</p>
-                <ul style="color:#555; margin-top: 15px;">
-                    <li>✔ 신체활동 지원 (식사, 세면, 이동 도움)</li>
-                    <li>✔ 일상생활 지원 (청소, 세탁, 취사)</li>
-                    <li>✔ 정서 지원 및 말벗 서비스</li>
+                <h3 style="color:#007bff;"><i class="fa-solid fa-house-chimney-medical"></i> 맞춤형 방문 돌봄</h3>
+                <p>국가 공인 요양보호사가 댁으로 방문하여 신체 활동 및 일상생활을 지원합니다.</p>
+                <ul style="color:#555; margin-top: 15px; padding-left: 20px;">
+                    <li>신체활동 지원 (식사, 세면, 이동 도움)</li>
+                    <li>일상생활 지원 (청소, 세탁, 취사)</li>
+                    <li>정서 지원 및 말벗 서비스</li>
                 </ul>
             </div>
             <div class="service-price" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
                 <h4>재가요양 연결 문의</h4>
-                <p style="font-size:0.9rem;">전문 사회복지사가 친절히 상담해드립니다.</p>
+                <p style="font-size:0.9rem;">전문 사회복지사 상담</p>
                 <a href="#contact" class="btn btn-primary" onclick="selectService('재가요양')">연결 상담 신청하기</a>
             </div>
         </div>
@@ -143,27 +147,25 @@
 
     <section id="rates" style="background-color: #fafafa;">
         <h2>간병 요금 안내 (부가세 포함)</h2>
-        <p class="section-desc">환자의 상태와 중증도에 따른 투명한 정찰제 요금입니다.</p>
-
         <table class="price-table">
             <thead>
                 <tr>
-                    <th width="60%">환자 상태 및 유형</th>
-                    <th width="40%">1일 요금 (24시간 기준)</th>
+                    <th width="55%">환자 상태 및 유형</th>
+                    <th width="45%">1일 요금 (24시간)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        <strong>일반 / 항암 / 하반신 마비 / 호흡재활</strong><br>
-                        <span style="font-size:0.9rem; color:#666;">VRE, CRE 및 기타 격리 환자 포함</span>
+                        <strong>일반 / 항암 / 마비 / 호흡재활</strong><br>
+                        <span style="font-size:0.8rem; color:#666;">VRE, CRE, 기타 격리 포함</span>
                     </td>
                     <td><strong>160,000원</strong></td>
                 </tr>
                 <tr>
                     <td>
-                        <strong>중증 치매 / 대소변 불가 환자</strong><br>
-                        <span style="font-size:0.9rem; color:#666;">집중 케어가 필요한 경우</span>
+                        <strong>중증 치매 / 대소변 불가</strong><br>
+                        <span style="font-size:0.8rem; color:#666;">집중 케어 필요 시</span>
                     </td>
                     <td><strong>180,000원</strong></td>
                 </tr>
@@ -171,18 +173,12 @@
         </table>
 
         <div class="price-note">
-            <h4><i class="fa-solid fa-clock"></i> 간병 시간 기준</h4>
+            <h4><i class="fa-solid fa-clock"></i> 시간 및 지급 기준</h4>
             <ul>
-                <li><strong>24시간 간병:</strong> 간병사 도착시간 기준 24시간 근무 시 1일로 계산 (마지막 날 16시간 이상 시 1일 요금)</li>
-                <li><strong>주간 10시간:</strong> 오전 9시 ~ 오후 7시</li>
-                <li><strong>야간 10시간:</strong> 오후 9시 ~ 오전 7시</li>
+                <li><strong>24시간:</strong> 도착 기준 24시간 (마지막 날 16시간 이상 시 1일 요금)</li>
+                <li><strong>주간 10시간:</strong> 09:00 ~ 19:00 / <strong>야간 10시간:</strong> 21:00 ~ 07:00</li>
+                <li><strong>간병비 지급:</strong> 주급 원칙 (간병사에게 직접 계좌이체/현금)</li>
             </ul>
-        </div>
-
-        <div class="price-note" style="margin-top:15px; border-left: 4px solid #007bff;">
-            <h4><i class="fa-solid fa-hand-holding-dollar"></i> 간병비 지급 안내</h4>
-            <p>간병 서비스는 환자(보호자)와 간병사 간의 계약에 의한 것으로, <strong>간병비는 합의된 금액을 간병사에게 직접 지급</strong>합니다.</p>
-            <p>지급 방식: 주급 형태 (근무일수 계산하여 현금 또는 계좌이체). 단, 1주 이하 단기 간병은 완료 시점에 지급.</p>
         </div>
     </section>
 
@@ -190,27 +186,41 @@
         <h2>케어라이트 병원동행</h2>
         <div class="service-card">
             <div class="service-info">
-                <h3><i class="fa-solid fa-car-side"></i> 자택에서 자택까지 책임지는 동행</h3>
-                <p>가족이 동행하기 힘들 때, 전문 매니저가 보호자가 되어드립니다.</p>
-                <ul style="margin-top:15px; line-height:1.8;">
-                    <li>• 차량 지원 서비스 선택 가능</li>
-                    <li>• 병원 내 진료 수속, 대납, 진료 예약 등 모든 업무 처리</li>
-                    <li>• 안전한 귀가 조치까지 완벽 케어</li>
+                <h3><i class="fa-solid fa-car-side"></i> 병원 동행 서비스</h3>
+                <p>자택에서 병원, 다시 자택까지 안전하게 책임집니다.</p>
+                <ul style="margin-top:10px; padding-left: 20px;">
+                    <li>진료 수속, 대납, 예약 업무 대행</li>
+                    <li>차량 지원 서비스 선택 가능</li>
                 </ul>
             </div>
             <div class="service-price">
-                <h4>동행 서비스 요금</h4>
-                <div style="margin-bottom:15px; border-bottom:1px solid #ddd; padding-bottom:10px;">
-                    <span>차량 미이용 (1일 7시간)</span><br>
-                    <span class="price-tag">140,000원</span>
+                <h4>1일 7시간 기준</h4>
+                <div style="border-bottom:1px solid #ddd; padding-bottom:5px; margin-bottom:5px;">
+                    <span>차량 미이용</span> <strong class="price-tag" style="font-size:1.1rem;">140,000원</strong>
                 </div>
                 <div>
-                    <span>차량 이용 시 (1일 7시간)</span><br>
-                    <span class="price-tag">210,000원</span><br>
-                    <span style="font-size:0.8rem; color:#888;">(병원 주차비 별도)</span>
+                    <span>차량 이용 시</span> <strong class="price-tag" style="font-size:1.1rem;">210,000원</strong>
                 </div>
-                <p style="font-size:0.8rem; color:red; margin-top:5px;">* 시간 초과 시 30% 할증</p>
+                <p style="font-size:0.8rem; color:red; margin-top:5px;">* 주차비 별도, 초과 시 30% 할증</p>
             </div>
+        </div>
+    </section>
+
+    <section id="matching" style="background:#e3f2fd;">
+        <h2>전문 간병 매칭</h2>
+        <div class="about-box" style="text-align:center; background:white; border-left:none; border-top: 5px solid #007bff;">
+            <i class="fa-solid fa-handshake-angle" style="font-size:3rem; color:#007bff; margin-bottom:15px;"></i>
+            <h3>"빠르고 정확한 간병 매칭 시스템"</h3>
+            <p>신원 검증과 직무 교육을 마친 베테랑 간병인이<br>병원 및 가정으로 신속하게 찾아갑니다.</p>
+            
+            <div style="background:#fff3cd; padding:15px; border-radius:10px; margin-top:20px; display:inline-block;">
+                <i class="fa-solid fa-bolt" style="color:#d32f2f;"></i>
+                <strong>카카오톡 신청 시 바로 응답 전화 회신으로 매칭 완료!</strong>
+            </div>
+            <br>
+            <a href="https://pf.kakao.com/" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; margin-top:20px; font-weight:bold;">
+                <i class="fa-solid fa-comment"></i> 카카오톡 간병 신청하기
+            </a>
         </div>
     </section>
 
@@ -219,11 +229,10 @@
         <div class="about-box" style="text-align:center; background:white; border-left:none; border-top: 5px solid #28a745;">
             <i class="fa-solid fa-user-nurse" style="font-size:3rem; color:#28a745; margin-bottom:15px;"></i>
             <h3>함께하실 간병사님을 모십니다</h3>
-            <p>카카오톡으로 <strong>[간병 의사 및 전화번호]</strong>를 남겨주시면,<br>담당자가 즉시 콜(Call) 전화 드려 상세히 안내해 드립니다.</p>
+            <p>카카오톡으로 <strong>[간병 의사 및 전화번호]</strong>를 남겨주시면,<br>담당자가 즉시 전화 드려 상세히 안내해 드립니다.</p>
             <a href="https://pf.kakao.com/" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; margin-top:15px;">
-                <i class="fa-solid fa-comment"></i> 카카오톡으로 지원하기
+                <i class="fa-solid fa-comment"></i> 카카오톡 구직 지원
             </a>
-            <p style="margin-top:15px; font-size:0.9rem; color:#666;">* 카카오톡 신청 시 빠른 회신으로 매칭이 완료됩니다.</p>
         </div>
     </section>
 
@@ -252,7 +261,7 @@
             </div>
             <div class="form-group">
                 <label>상세 내용</label>
-                <textarea name="message" rows="4" placeholder="환자 상태, 병원명, 원하시는 일정 등을 적어주세요"></textarea>
+                <textarea name="message" rows="4" placeholder="환자 상태, 병원명, 일정 등을 적어주세요"></textarea>
             </div>
             <input type="text" name="_gotcha" style="display:none">
             <button type="submit" id="my-form-button" class="submit-btn">상담 신청하기 (전송)</button>
@@ -260,22 +269,19 @@
 
         <div id="form-status">
             <i class="fa-solid fa-circle-check"></i>
-            <h3>상담 신청이 완료되었습니다!</h3>
-            <p>담당자가 내용 확인 후 빠르게 연락드리겠습니다.</p>
+            <h3>신청이 완료되었습니다!</h3>
+            <p>담당자가 확인 후 빠르게 연락드리겠습니다.</p>
         </div>
     </section>
 
     <section id="location">
         <h2>오시는 길</h2>
         <div class="address-box">
-            <div class="address-item"><strong>본사</strong> 서울특별시 강남구 테헤란로 123 (예시 주소)</div>
+            <div class="address-item"><strong>본사</strong> 서울특별시 강남구 테헤란로 123 (예시)</div>
             <div class="address-item"><strong>가평 지점</strong> 경기도 가평군 (별장 사무소)</div>
         </div>
         
         <div class="contact-phones" style="margin-top:20px;">
-            <span style="font-weight:bold; font-size:1.2rem; color:#007bff;">대표 상담 전화</span>
-        </div>
-        <div class="contact-phones">
             <a href="tel:010-2730-5479" class="phone-badge">010-2730-5479</a>
             <a href="tel:010-7654-6586" class="phone-badge">010-7654-6586</a>
             <a href="tel:010-8999-6565" class="phone-badge">010-8999-6565</a>
@@ -289,59 +295,29 @@
     <footer>
         <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
             <div>
-                <h3 style="color: #fff; margin-bottom: 10px;">주식회사 케이라이트 (Care Light)</h3>
-                <p>상담문의: 010-2730-5479 | 010-7654-6586</p>
+                <h3 style="color: #fff; margin-bottom: 10px;">주식회사 케이라이트</h3>
+                <p>상담문의: 010-2730-5479</p>
                 <p>이메일: Khojin@nate.com</p>
             </div>
             <div style="text-align: right; min-width: 200px;">
-                <p>© 2026 Care Light Corp. All rights reserved.</p>
-                <p>차별화된 재가 서비스로 편안한 돌봄을 약속드립니다.</p>
+                <p>© 2026 Care Light Corp.</p>
+                <p>All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         var form = document.getElementById("my-form");
-        
-        // 재가요양 버튼 클릭 시 폼 선택 자동 변경
-        function selectService(val) {
-            document.getElementById('service-select').value = val;
-        }
-
+        function selectService(val) { document.getElementById('service-select').value = val; }
         async function handleSubmit(event) {
             event.preventDefault();
             var status = document.getElementById("form-status");
             var button = document.getElementById("my-form-button");
             var data = new FormData(event.target);
-            
-            button.disabled = true;
-            button.innerText = "전송 중입니다...";
-
-            fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    form.style.display = "none";
-                    status.style.display = "block";
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert("문제가 발생했습니다.");
-                        }
-                    });
-                    button.disabled = false;
-                    button.innerText = "상담 신청하기 (전송)";
-                }
-            }).catch(error => {
-                alert("전송 실패. 인터넷 연결을 확인해주세요.");
-                button.disabled = false;
-                button.innerText = "상담 신청하기 (전송)";
-            });
+            button.disabled = true; button.innerText = "전송 중입니다...";
+            fetch(event.target.action, { method: form.method, body: data, headers: { 'Accept': 'application/json' } })
+            .then(response => { if (response.ok) { form.style.display = "none"; status.style.display = "block"; form.reset(); } else { alert("문제가 발생했습니다."); button.disabled = false; button.innerText = "상담 신청하기 (전송)"; } })
+            .catch(error => { alert("전송 실패. 인터넷 연결 확인"); button.disabled = false; button.innerText = "상담 신청하기 (전송)"; });
         }
         form.addEventListener("submit", handleSubmit);
     </script>
