@@ -17,7 +17,7 @@
         nav a { text-decoration: none; color: #555; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
         nav a:hover { color: #007bff; }
 
-        /* 히어로 섹션 (따뜻한 느낌의 Unsplash 사진 적용 완료) */
+        /* 히어로 섹션 */
         .hero { 
             /* 따뜻하게 손을 잡은 간병 이미지 */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
@@ -73,7 +73,9 @@
         #form-status i { font-size: 3.5rem; color: #28a745; margin-bottom: 1rem; }
 
         /* 지도 및 하단 */
-        .kakao-float { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
+        .kakao-float { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #FEE500; color: #3A1D1D; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s; }
+        .kakao-float:hover { transform: scale(1.1); }
+        
         footer { background: #222; color: #bbb; padding: 2rem 5%; font-size: 0.85rem; }
 
         /* 모바일 최적화 */
@@ -92,7 +94,7 @@
 </head>
 <body>
 
-    <a href="https://pf.kakao.com/" class="kakao-float" target="_blank"><i class="fa-solid fa-comment"></i></a>
+    <a href="http://pf.kakao.com/_INjAX/chat" class="kakao-float" target="_blank"><i class="fa-solid fa-comment"></i></a>
 
     <header>
         <a href="#" class="logo"><i class="fa-solid fa-sun"></i> 케어라이트</a>
@@ -225,7 +227,7 @@
                 <strong>카카오톡 신청 시 바로 응답 전화 회신으로 매칭 완료!</strong>
             </div>
             <br>
-            <a href="https://pf.kakao.com/" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; margin-top:20px; font-weight:bold;">
+            <a href="http://pf.kakao.com/_INjAX/chat" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; margin-top:20px; font-weight:bold;">
                 <i class="fa-solid fa-comment"></i> 카카오톡 간병 신청하기
             </a>
         </div>
@@ -237,7 +239,7 @@
             <i class="fa-solid fa-user-nurse" style="font-size:3rem; color:#28a745; margin-bottom:15px;"></i>
             <h3>함께하실 간병사님을 모십니다</h3>
             <p>카카오톡으로 <strong>[간병 의사 및 전화번호]</strong>를 남겨주시면,<br>담당자가 즉시 전화 드려 상세히 안내해 드립니다.</p>
-            <a href="https://pf.kakao.com/" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; margin-top:15px;">
+            <a href="http://pf.kakao.com/_INjAX/chat" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; margin-top:15px;">
                 <i class="fa-solid fa-comment"></i> 카카오톡 구직 지원
             </a>
         </div>
