@@ -19,7 +19,6 @@
 
         /* 히어로 섹션 */
         .hero { 
-            /* 따뜻하게 손을 잡은 간병 이미지 */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
             url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80'); 
             background-size: cover; background-position: center; height: 500px; 
@@ -149,7 +148,9 @@
             <div class="service-price" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
                 <h4>재가요양 연결 문의</h4>
                 <p style="font-size:0.9rem;">전문 사회복지사 상담</p>
-                <a href="#contact" class="btn btn-primary" onclick="selectService('재가요양')">연결 상담 신청하기</a>
+                <a href="http://pf.kakao.com/_INjAX/chat" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; font-weight:bold; border:none;">
+                    <i class="fa-solid fa-comment"></i> 카카오톡 요양 상담
+                </a>
             </div>
         </div>
     </section>
@@ -211,6 +212,10 @@
                     <span>차량 이용 시</span> <strong class="price-tag" style="font-size:1.1rem;">210,000원</strong>
                 </div>
                 <p style="font-size:0.8rem; color:red; margin-top:5px;">* 주차비 별도, 초과 시 30% 할증</p>
+                
+                <div style="margin-top: 15px;">
+                    <a href="#contact" class="btn btn-primary" onclick="selectService('병원동행')">병원동행 예약하기</a>
+                </div>
             </div>
         </div>
     </section>
@@ -238,9 +243,10 @@
         <div class="about-box" style="text-align:center; background:white; border-left:none; border-top: 5px solid #28a745;">
             <i class="fa-solid fa-user-nurse" style="font-size:3rem; color:#28a745; margin-bottom:15px;"></i>
             <h3>함께하실 간병사님을 모십니다</h3>
-            <p>카카오톡으로 <strong>[간병 의사 및 전화번호]</strong>를 남겨주시면,<br>담당자가 즉시 전화 드려 상세히 안내해 드립니다.</p>
-            <a href="http://pf.kakao.com/_INjAX/chat" target="_blank" class="btn" style="background:#FEE500; color:#3A1D1D; margin-top:15px;">
-                <i class="fa-solid fa-comment"></i> 카카오톡 구직 지원
+            <p><strong>[간병인 구직 문의]</strong>로 신청해주시면,<br>담당자가 즉시 전화 드려 상세히 안내해 드립니다.</p>
+            
+            <a href="#contact" class="btn btn-primary" onclick="selectService('구직문의')" style="margin-top:15px;">
+                온라인 구직 신청하기
             </a>
         </div>
     </section>
@@ -249,7 +255,7 @@
         <h2>상담 및 예약 문의</h2>
         <p class="section-desc">케어라이트가 언제나 함께하겠습니다.</p>
         
-        <form id="my-form" action="https://formspree.io/f/xpqqddoz" method="POST">
+        <form id="my-form" action="https://formspree.io/f/xpqqqbjr" method="POST">
             <input type="hidden" name="_subject" value="[케어라이트] 새로운 상담 신청이 도착했습니다!">
             
             <div class="form-group">
